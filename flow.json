@@ -1,1 +1,78 @@
-[]
+[
+    {
+        "id": "23082459f6dfcd32",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e8afb463bb52c77f",
+        "type": "inject",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "55dae1717606c666"
+            ]
+        ]
+    },
+    {
+        "id": "55dae1717606c666",
+        "type": "debug",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "172c64f376be22a2",
+        "type": "ui_button",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 480,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    }
+]
