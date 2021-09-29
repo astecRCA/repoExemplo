@@ -7,9 +7,525 @@
         "info": ""
     },
     {
-        "id": "e8afb463bb52c77f",
-        "type": "inject",
+        "id": "806212a532f9b329",
+        "type": "tab",
+        "label": "Leitura e escrita em coils via MODBUS",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "9f80e3415f6e45e0",
+        "type": "tab",
+        "label": "testes",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "c7d3f510cda5efc7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.182",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "af73cef372ab6f4d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7c3c99cc300cdf8a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#019d45",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#019d45",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#019d45",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#01e966",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#019d45",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "menu",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 35,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "55f19e211c6b9227",
+        "type": "ui_group",
+        "name": "Measurements",
+        "tab": "af73cef372ab6f4d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c085055f5f4c284f",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "tcpHost": "192.168.0.22",
+        "tcpPort": "8000",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "b2d0969228a6d710",
+        "type": "MSSQL-CN",
+        "tdsVersion": "7_4",
+        "name": "",
+        "server": "",
+        "port": "1433",
+        "encyption": true,
+        "trustServerCertificate": true,
+        "database": "",
+        "useUTC": true,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false,
+        "enableArithAbort": true
+    },
+    {
+        "id": "c2cbe520d998779a",
+        "type": "file",
         "z": "23082459f6dfcd32",
+        "name": "Relatório",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1120,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0c757c2ca61df12",
+        "type": "mqtt out",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "topic": "Measurements",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c7d3f510cda5efc7",
+        "x": 680,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d71f0caabf5828cd",
+        "type": "ui_text",
+        "z": "23082459f6dfcd32",
+        "group": "55f19e211c6b9227",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1110,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fdc6e66145835d3c",
+        "type": "modbus-read",
+        "z": "23082459f6dfcd32",
+        "name": "Temperatura",
+        "topic": "temp",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "3",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "c085055f5f4c284f",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 150,
+        "y": 20,
+        "wires": [
+            [
+                "99eb97a8b74f1d6a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5e1d657f79c7819e",
+        "type": "modbus-read",
+        "z": "23082459f6dfcd32",
+        "name": "Velocidade",
+        "topic": "velocity",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "1",
+        "quantity": "1",
+        "rate": "3",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "c085055f5f4c284f",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "99eb97a8b74f1d6a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6e0f3ca3e83349d7",
+        "type": "modbus-read",
+        "z": "23082459f6dfcd32",
+        "name": "Umidade Relativa",
+        "topic": "humidity",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "2",
+        "quantity": "1",
+        "rate": "3",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "c085055f5f4c284f",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "99eb97a8b74f1d6a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e390cfc7e5d27e9f",
+        "type": "modbus-read",
+        "z": "23082459f6dfcd32",
+        "name": "Corrente",
+        "topic": "Current",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "3",
+        "quantity": "1",
+        "rate": "3",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "c085055f5f4c284f",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "99eb97a8b74f1d6a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b838b46385721640",
+        "type": "function",
+        "z": "23082459f6dfcd32",
+        "name": "JSON to CSV format accept",
+        "func": "if(msg.topic == \"Current\") {\n    date = new Date();\n    thisTime = date.getHours() + \":\" + date.getMinutes() + \":\" + date.getSeconds();\n    quebra = \";\"\n    msg.payload = thisTime + quebra + msg.payload.temp + quebra + msg.payload.humidity + quebra + msg.payload.velocity + quebra + msg.payload.Current;\n    return msg\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "quebra = \";\"\nvar msg1 = { payload: \"Time\" + quebra + \"Temperatura\" + quebra + \"Umidade relativa\" + quebra + \"Velocidade\" + quebra + \"Corrente\" };\nreturn msg1\n",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "b008db7b27296dfa"
+            ]
+        ]
+    },
+    {
+        "id": "99eb97a8b74f1d6a",
+        "type": "function",
+        "z": "23082459f6dfcd32",
+        "name": "Measure to JSON",
+        "func": "if(msg.topic == \"temp\") {\n    tempVar = msg.payload;\n}\nif(msg.topic == \"humidity\") {\n    humidityVar = msg.payload;\n}\nif(msg.topic == \"velocity\") {\n    velocityVar = msg.payload;\n}\nif(msg.topic == \"Current\") {\n    CurrentVar = msg.payload;\n}\nmsg.payload = {\"temp\": parseInt(tempVar),\n               \"humidity\": parseInt(humidityVar),\n               \"velocity\": parseInt(velocityVar),\n               \"Current\": parseInt(CurrentVar)\n              };\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "var tempVar = 0;\nvar humidityVar = 0;\nvar velocityVar = 0;\nvar CurrentVar = 0;\n",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "b838b46385721640",
+                "ab362b83ebf486c9"
+            ]
+        ],
+        "icon": "font-awesome/fa-bolt"
+    },
+    {
+        "id": "332d7acffcc989b6",
+        "type": "modbus-read",
+        "z": "806212a532f9b329",
+        "name": "",
+        "topic": "LED",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "unitid": "",
+        "dataType": "Input",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "c085055f5f4c284f",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "f61fe41196f7b478"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "774b9a34fdc26884",
+        "type": "ui_switch",
+        "z": "806212a532f9b329",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "55f19e211c6b9227",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 470,
+        "y": 100,
+        "wires": [
+            [
+                "d078366d77d2351f"
+            ]
+        ]
+    },
+    {
+        "id": "d078366d77d2351f",
+        "type": "modbus-write",
+        "z": "806212a532f9b329",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "c085055f5f4c284f",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 660,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f61fe41196f7b478",
+        "type": "function",
+        "z": "806212a532f9b329",
+        "name": "",
+        "func": "msg.payload = msg.payload[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "774b9a34fdc26884"
+            ]
+        ]
+    },
+    {
+        "id": "0612eb92372a8e16",
+        "type": "inject",
+        "z": "806212a532f9b329",
         "name": "",
         "props": [
             {
@@ -25,38 +541,322 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 300,
-        "y": 120,
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 330,
+        "y": 160,
         "wires": [
             [
-                "55dae1717606c666"
+                "774b9a34fdc26884"
             ]
         ]
     },
     {
-        "id": "55dae1717606c666",
-        "type": "debug",
+        "id": "ab362b83ebf486c9",
+        "type": "function",
         "z": "23082459f6dfcd32",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 120,
+        "func": "// Como enviar os dados ao Broker MQTT? \n// por JSON ou variável por variável?\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 80,
+        "wires": [
+            [
+                "f0c757c2ca61df12"
+            ]
+        ]
+    },
+    {
+        "id": "fd60b34f90c2c10e",
+        "type": "mqtt in",
+        "z": "806212a532f9b329",
+        "name": "Button MQTT",
+        "topic": "button",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "c7d3f510cda5efc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "bdd0e678b33a6ad2"
+            ]
+        ]
+    },
+    {
+        "id": "e4dd2414a3b317da",
+        "type": "mqtt out",
+        "z": "806212a532f9b329",
+        "name": "readButton MQTT",
+        "topic": "button",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c7d3f510cda5efc7",
+        "x": 670,
+        "y": 40,
         "wires": []
     },
     {
-        "id": "172c64f376be22a2",
+        "id": "bdd0e678b33a6ad2",
+        "type": "function",
+        "z": "806212a532f9b329",
+        "name": "",
+        "func": "if (msg.payload == \"true\"){\n    msg.payload = true;\n} else {\n    msg.payload = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 40,
+        "wires": [
+            [
+                "774b9a34fdc26884"
+            ]
+        ]
+    },
+    {
+        "id": "9813f430a0beb7bf",
+        "type": "inject",
+        "z": "806212a532f9b329",
+        "name": "false",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 330,
+        "y": 200,
+        "wires": [
+            [
+                "774b9a34fdc26884"
+            ]
+        ]
+    },
+    {
+        "id": "b008db7b27296dfa",
+        "type": "function",
+        "z": "23082459f6dfcd32",
+        "name": "Create CSV file with DATA and Bool sign",
+        "func": "date = new Date();\nvar tempDateString = \"_\" + date.getMinutes() //+ \"-\" + date.getMinute() + \"-\" + date.getYear();\nvar tempDireString = \"C:/Users/RCA/Desktop/CSV archives/teste\";\nvar tempAuxString = tempDireString.concat(tempDateString);\nvar finalPath = tempAuxString.concat(\".csv\");\nmsg.filename = finalPath;\nif(msg.topic == \"Current\"){\n    dados = msg.payload;\n}\nif(msg.topic == \"buttonSave\" && msg.payload == true){\n    msg.payload = dados;\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 280,
+        "wires": [
+            [
+                "d71f0caabf5828cd",
+                "c2cbe520d998779a"
+            ]
+        ]
+    },
+    {
+        "id": "042ee25edfa19aa7",
         "type": "ui_button",
         "z": "23082459f6dfcd32",
         "name": "",
-        "order": 0,
+        "group": "55f19e211c6b9227",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "buttonSave",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "buttonSave",
+        "topicType": "str",
+        "x": 670,
+        "y": 360,
+        "wires": [
+            [
+                "b008db7b27296dfa"
+            ]
+        ]
+    },
+    {
+        "id": "e15977b578030ef6",
+        "type": "mqtt in",
+        "z": "23082459f6dfcd32",
+        "name": "Button MQTT",
+        "topic": "buttonSave",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "c7d3f510cda5efc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "423832e265f6775c"
+            ]
+        ]
+    },
+    {
+        "id": "423832e265f6775c",
+        "type": "function",
+        "z": "23082459f6dfcd32",
+        "name": "MQTT string to BOOL",
+        "func": "if (msg.payload == \"true\"){\n    msg.payload = true;\n    return msg;\n} \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 360,
+        "wires": [
+            [
+                "042ee25edfa19aa7"
+            ]
+        ]
+    },
+    {
+        "id": "7c9b4a008c3cc423",
+        "type": "ui_slider",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "55f19e211c6b9227",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "200",
+        "step": 1,
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "cdf874dc53655541",
+                "f92ff25a869441a5"
+            ]
+        ]
+    },
+    {
+        "id": "f92ff25a869441a5",
+        "type": "ui_text_input",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "55f19e211c6b9227",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 520,
+        "wires": [
+            [
+                "cdf874dc53655541",
+                "7c9b4a008c3cc423"
+            ]
+        ]
+    },
+    {
+        "id": "ad4e52af1536a60a",
+        "type": "ui_toast",
+        "z": "9f80e3415f6e45e0",
+        "position": "bottom left",
+        "displayTime": "3",
+        "highlight": "red",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "topic": "AVISO, que já vou avisando, que isso é um aviso.",
+        "name": "aviso",
+        "x": 690,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "98c0ab1d7c67a024",
+        "type": "ui_audio",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "group": "55f19e211c6b9227",
+        "voice": "Microsoft Maria - Portuguese (Brazil)",
+        "always": "",
+        "x": 820,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "cdf874dc53655541",
+        "type": "ui_gauge",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "group": "55f19e211c6b9227",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "70",
+        "seg2": "130",
+        "x": 510,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b7b2b854f06ee1e1",
+        "type": "ui_button",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "group": "55f19e211c6b9227",
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -65,14 +865,469 @@
         "color": "",
         "bgcolor": "",
         "icon": "",
-        "payload": "",
-        "payloadType": "str",
+        "payload": "true",
+        "payloadType": "bool",
         "topic": "topic",
         "topicType": "msg",
-        "x": 480,
-        "y": 320,
+        "x": 730,
+        "y": 400,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "843c68a308725fa1",
+        "type": "function",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "func": "context.data = context.data || {};\ndate = new Date(); \ncontext.data.time = date.getHours() + \":\" + date.getMinutes() + \":\" + date.getSeconds();\n//var date =  date.getHours(thisTime) + \":\" + date.getMinutes(thisTime) + \":\" + date.getSeconds(thisTime);\n//context.data.time = date;//\"date.getHours() + \":\" + date.getMinutes() + \":\" + date.getSeconds()\";\nswitch(msg.topic) {\n    case \"temp\" :\n        context.data.temp = msg.payload;\n        msg = null;\n    break;\n    case \"humidity\":\n        context.data.humidity = msg.payload;\n        msg = null;\n    break;\n    case \"velocity\" :\n        context.data.velocity = msg.payload;\n        msg = null;\n    break;\n    case \"Current\" :\n        context.data.Current = msg.payload;\n        msg = null;\n    break;\n    case \"state\" :\n        if (context.data.temp != null && context.data.humidity != null && context.data.velocity != null && context.data.Current != null) {\n            context.data.state = msg.payload;\n        }    \n    break;\n}\nquebra = \";\"\nif (context.data.temp != null && context.data.humidity != null && context.data.velocity != null && context.data.Current != null && context.data.state != null) {\n   msg.payload = context.data.time + quebra + context.data.temp + quebra + context.data.humidity + quebra + context.data.velocity + quebra + context.data.Current;\n   context.data.temp = null;\n   context.data.humidity = null;\n   context.data.velocity = null;\n   context.data.Current = null;\n   context.data.state = null;\n    return msg\n}    \n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-bolt"
+    },
+    {
+        "id": "0f811617f0e106a6",
+        "type": "ui_button",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "group": "55f19e211c6b9227",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "str",
+        "topic": "state",
+        "topicType": "str",
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "843c68a308725fa1"
+            ]
+        ]
+    },
+    {
+        "id": "6d4611a423629c32",
+        "type": "ui_text_input",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "label": "Temperatura ",
+        "tooltip": "",
+        "group": "55f19e211c6b9227",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "temp",
+        "topicType": "str",
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "843c68a308725fa1"
+            ]
+        ]
+    },
+    {
+        "id": "cf924d10a6347fd4",
+        "type": "ui_text_input",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "label": "Umidade relativa",
+        "tooltip": "",
+        "group": "55f19e211c6b9227",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "humidity",
+        "topicType": "str",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "843c68a308725fa1"
+            ]
+        ]
+    },
+    {
+        "id": "fe6060790bb3ecd1",
+        "type": "ui_text_input",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "label": "Velocidade",
+        "tooltip": "",
+        "group": "55f19e211c6b9227",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "velocity",
+        "topicType": "str",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "843c68a308725fa1"
+            ]
+        ]
+    },
+    {
+        "id": "13dc6b6240394551",
+        "type": "ui_text_input",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "label": "Corrente",
+        "tooltip": "",
+        "group": "55f19e211c6b9227",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "Current",
+        "topicType": "str",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "843c68a308725fa1"
+            ]
+        ]
+    },
+    {
+        "id": "209e0d4460a5de98",
+        "type": "ui_form",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "label": "",
+        "group": "55f19e211c6b9227",
+        "order": 11,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Temperatura",
+                "value": "temp",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Umidade Relativa",
+                "value": "humidity",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Velocidade",
+                "value": "velocity",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Corrente",
+                "value": "Current",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "temp": "",
+            "humidity": "",
+            "velocity": "",
+            "Current": ""
+        },
+        "payload": "",
+        "submit": "OK",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "x": 630,
+        "y": 240,
+        "wires": [
+            [
+                "2a98952b8f4e0c40"
+            ]
+        ]
+    },
+    {
+        "id": "2a98952b8f4e0c40",
+        "type": "function",
+        "z": "9f80e3415f6e45e0",
+        "name": "",
+        "func": "date = new Date();\nvar tempDateString = \"_\" + date.getMinutes() //+ \"-\" + date.getMinute() + \"-\" + date.getYear();\nvar tempDireString = \"C:/Users/RCA/Desktop/CSV archives/teste\";\nvar tempAuxString = tempDireString.concat(tempDateString);\nvar finalPath = tempAuxString.concat(\".csv\");\nmsg.filename = finalPath;\nthisTime = date.getHours() + \":\" + date.getMinutes() + \":\" + date.getSeconds();\nquebra = \";\"\nmsg.payload = thisTime + quebra + msg.payload.temp + quebra + msg.payload.humidity + quebra + msg.payload.velocity + quebra + msg.payload.Current;\nreturn msg\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "quebra = \";\"\nvar msg1 = { payload: \"Time\" + quebra + \"Temperatura\" + quebra + \"Umidade relativa\" + quebra + \"Velocidade\" + quebra + \"Corrente\" };\nreturn msg1\n",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d24115975a86213",
+        "type": "modbus-write",
+        "z": "23082459f6dfcd32",
+        "name": "Temperatura",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "1",
+        "server": "c085055f5f4c284f",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 550,
+        "y": 480,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fd658be99492aed0",
+        "type": "mqtt in",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "topic": "Measurements",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "c7d3f510cda5efc7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 140,
+        "y": 580,
+        "wires": [
+            [
+                "3cdadef725c22f49"
+            ]
+        ]
+    },
+    {
+        "id": "3cdadef725c22f49",
+        "type": "function",
+        "z": "23082459f6dfcd32",
+        "name": "String to JSON package",
+        "func": "objeto = JSON.parse(msg.payload);\nmsg.payload = String(objeto.temp);\nvar msg2 = {payload: String(objeto.humidity)};\nvar msg3 = {payload: String(objeto.velocity)};\nvar msg4 = {payload: String(objeto.Current)};\nreturn [msg, msg2, msg3, msg4]",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 580,
+        "wires": [
+            [
+                "4d24115975a86213"
+            ],
+            [
+                "ea1bc10f460e7ac0"
+            ],
+            [
+                "d9b8dc1181a1097c"
+            ],
+            [
+                "a5d60f5bcca25e5d"
+            ]
+        ]
+    },
+    {
+        "id": "ea1bc10f460e7ac0",
+        "type": "modbus-write",
+        "z": "23082459f6dfcd32",
+        "name": "Umidade Relativa",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "2",
+        "quantity": "1",
+        "server": "c085055f5f4c284f",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 650,
+        "y": 540,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d9b8dc1181a1097c",
+        "type": "modbus-write",
+        "z": "23082459f6dfcd32",
+        "name": "Velocidade",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "1",
+        "quantity": "1",
+        "server": "c085055f5f4c284f",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 630,
+        "y": 620,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a5d60f5bcca25e5d",
+        "type": "modbus-write",
+        "z": "23082459f6dfcd32",
+        "name": "Corrente",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "3",
+        "quantity": "1",
+        "server": "c085055f5f4c284f",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 540,
+        "y": 680,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b5fe996752f6406a",
+        "type": "ui_form",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "label": "",
+        "group": "55f19e211c6b9227",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Minuto",
+                "value": "minute",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Segundos",
+                "value": "second",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Categoria",
+                "value": "category",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "minute": "",
+            "second": "",
+            "category": ""
+        },
+        "payload": "",
+        "submit": "Pesquisar",
+        "cancel": "",
+        "topic": "busca",
+        "topicType": "msg",
+        "splitLayout": "",
+        "x": 810,
+        "y": 460,
+        "wires": [
+            [
+                "3f02173bd9612834"
+            ]
+        ]
+    },
+    {
+        "id": "c6c73b164768ebbc",
+        "type": "file in",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "filename": "",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1110,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f02173bd9612834",
+        "type": "function",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "func": "findMinute = msg.payload.minute;\nfindSecond = msg.payload.second;\nfindCat = msg.payload.category;\ndate = new Date();\nvar tempDateString = \"_\" + findMinute //+ \"-\" + date.getMinute() + \"-\" + date.getYear();\nvar tempDireString = \"C:/Users/RCA/Desktop/CSV archives/teste\";\nvar tempAuxString = tempDireString.concat(tempDateString);\nvar finalPath = tempAuxString.concat(\".csv\");\nmsg.filename = finalPath;\nmsg = msg.filename;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 520,
+        "wires": [
+            [
+                "ffe5d2f0bc19166b"
+            ]
+        ]
+    },
+    {
+        "id": "ffe5d2f0bc19166b",
+        "type": "debug",
+        "z": "23082459f6dfcd32",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 520,
+        "wires": []
     }
 ]
