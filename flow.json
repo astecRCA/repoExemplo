@@ -194,6 +194,36 @@
         "parallelUnitIdsAllowed": true
     },
     {
+        "id": "cb408bc24ecf38d4",
+        "type": "ui_group",
+        "name": "Search",
+        "tab": "af73cef372ab6f4d",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": true
+    },
+    {
+        "id": "d8b6af48efbd66a0",
+        "type": "ui_spacer",
+        "z": "0cc221fa0f7b8897",
+        "name": "spacer",
+        "group": "cb408bc24ecf38d4",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8d820853cbfaffd2",
+        "type": "ui_spacer",
+        "z": "0cc221fa0f7b8897",
+        "name": "spacer",
+        "group": "cb408bc24ecf38d4",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
         "id": "c2cbe520d998779a",
         "type": "file",
         "z": "23082459f6dfcd32",
@@ -232,7 +262,7 @@
         "type": "ui_text",
         "z": "23082459f6dfcd32",
         "group": "55f19e211c6b9227",
-        "order": 12,
+        "order": 11,
         "width": 0,
         "height": 0,
         "name": "",
@@ -446,7 +476,7 @@
         "label": "switch",
         "tooltip": "",
         "group": "55f19e211c6b9227",
-        "order": 13,
+        "order": 12,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -739,7 +769,7 @@
         "label": "slider",
         "tooltip": "",
         "group": "55f19e211c6b9227",
-        "order": 4,
+        "order": 7,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -766,7 +796,7 @@
         "label": "",
         "tooltip": "",
         "group": "55f19e211c6b9227",
-        "order": 3,
+        "order": 6,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -819,7 +849,7 @@
         "z": "9f80e3415f6e45e0",
         "name": "",
         "group": "55f19e211c6b9227",
-        "order": 8,
+        "order": 9,
         "width": 0,
         "height": 0,
         "gtype": "donut",
@@ -845,7 +875,7 @@
         "z": "9f80e3415f6e45e0",
         "name": "",
         "group": "55f19e211c6b9227",
-        "order": 2,
+        "order": 5,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -888,7 +918,7 @@
         "z": "9f80e3415f6e45e0",
         "name": "",
         "group": "55f19e211c6b9227",
-        "order": 7,
+        "order": 8,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -941,7 +971,7 @@
         "label": "Umidade relativa",
         "tooltip": "",
         "group": "55f19e211c6b9227",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -965,7 +995,7 @@
         "label": "Velocidade",
         "tooltip": "",
         "group": "55f19e211c6b9227",
-        "order": 1,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -989,7 +1019,7 @@
         "label": "Corrente",
         "tooltip": "",
         "group": "55f19e211c6b9227",
-        "order": 1,
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -1012,7 +1042,7 @@
         "name": "",
         "label": "",
         "group": "55f19e211c6b9227",
-        "order": 11,
+        "order": 10,
         "width": "0",
         "height": "0",
         "options": [
@@ -1219,8 +1249,8 @@
         "type": "function",
         "z": "0cc221fa0f7b8897",
         "name": "",
-        "func": "var dados = msg.payload.toString();\nvar corte = dados.split(/\\r\\n/);\nvar msgList = [];\nfor (var i = 0; i < 15; i++) {\n    if (i == 0){\n        msgList.push({payload:\"Hora;Temperatura;Humidade;Velocidade;Corrente\"});\n    }else{\n        if ((corte[i] != null) && (corte[i] != \"\")) {\n            msgList.push({payload:corte[i]});\n        }\n    }\n}\nreturn [msgList]",
-        "outputs": 1,
+        "func": "var dados = msg.payload.toString();\nvar corte = dados.split(/\\r\\n/);\nvar msgList = [];\nfor (var i = 0; i < 15; i++) {\n    if (i == 0){\n        msgList.push({payload:\"Hora;Temperatura;Humidade;Velocidade;Corrente\"});\n    }else{\n        if ((corte[i] != null) && (corte[i] != \"\")) {\n            msgList.push({payload:corte[i]});\n        }\n    }\n}\nmsg = null;\nvar tempDateString = \"_\" + date.getHours() + \"-\" + date.getMinutes() + \"_\" + date.getDay() + date.getMonth() + date.getYear();\nvar tempDireString = \"C:/Users/RCA/Desktop/CSV archives/Reports/testReports\";\nvar tempAuxString = tempDireString.concat(tempDateString);\nvar finalPath = tempAuxString.concat(\".csv\");\nmsg.filename = finalPath;\nreturn [[msgList], msg]",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -1229,8 +1259,10 @@
         "y": 360,
         "wires": [
             [
-                "35065d39c97a96e2",
-                "32e0c65b33aebcaf"
+                "35065d39c97a96e2"
+            ],
+            [
+                "35065d39c97a96e2"
             ]
         ]
     },
@@ -1239,30 +1271,13 @@
         "type": "file",
         "z": "0cc221fa0f7b8897",
         "name": "",
-        "filename": "C:/Users/RCA/Desktop/CSV archives/teste.csv",
+        "filename": "C:/Users/RCA/Desktop/CSV archives/Reports/teste.csv",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 920,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dca77bd6e15da63f",
-        "type": "function",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "func": "var dados = msg.payload.toString();\nvar corte = dados.split(/\\r\\n/);\nvar msgList = [];\nfor (var i = 0; i < 15; i++){\n    msgList.push({payload:corte[i]});\n   \n}\n return msgList",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1320,
-        "y": 300,
+        "x": 890,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1292,282 +1307,52 @@
         "z": "0cc221fa0f7b8897",
         "name": "",
         "label": "",
-        "group": "55f19e211c6b9227",
-        "order": 14,
+        "group": "cb408bc24ecf38d4",
+        "order": 3,
         "width": 0,
         "height": 0,
         "options": [
             {
-                "label": "Dia ",
-                "value": "day",
-                "type": "number",
+                "label": "Data",
+                "value": "date",
+                "type": "date",
                 "required": true,
                 "rows": null
             },
             {
-                "label": "Hora",
-                "value": "hour",
-                "type": "number",
+                "label": "Hora Inicial",
+                "value": "initTime",
+                "type": "time",
                 "required": true,
                 "rows": null
             },
             {
-                "label": "Minuto",
-                "value": "minute",
-                "type": "number",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Segundo",
-                "value": "second",
-                "type": "number",
+                "label": "Hora Final",
+                "value": "finalTime",
+                "type": "time",
                 "required": true,
                 "rows": null
             }
         ],
         "formValue": {
-            "day": "",
-            "hour": "",
-            "minute": "",
-            "second": ""
+            "date": "",
+            "initTime": "",
+            "finalTime": ""
         },
         "payload": "",
         "submit": "Pesquisar",
         "cancel": "",
         "topic": "busca",
         "topicType": "msg",
-        "splitLayout": "",
-        "x": 210,
-        "y": 280,
+        "splitLayout": false,
+        "x": 90,
+        "y": 300,
         "wires": [
             [
-                "d673ebaa088924a5"
+                "d673ebaa088924a5",
+                "5453676d9058fd17"
             ]
         ]
-    },
-    {
-        "id": "d673ebaa088924a5",
-        "type": "function",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "func": "findMinute = msg.payload.minute;\nfindSecond = msg.payload.second;\nfindDay = msg.payload.day;\nfindHour = msg.payload.hour;\ndate = new Date();\nvar tempDateString = \"_\" + findDay + \"-\" + \"09\" + \"-\" + \"2020\";\nvar tempDireString = \"C:/Users/RCA/Desktop/CSV archives/teste\";\nvar tempAuxString = tempDireString.concat(tempDateString);\nvar finalPath = tempAuxString.concat(\".csv\");\nmsg.filename = finalPath;\nmsg.topic = \"dados\";;\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 220,
-        "wires": [
-            [
-                "8bfcbc943d62c134"
-            ]
-        ]
-    },
-    {
-        "id": "32e0c65b33aebcaf",
-        "type": "debug",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "18073e65bc965fed",
-        "type": "ui_form",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "label": "",
-        "group": "55f19e211c6b9227",
-        "order": 14,
-        "width": 0,
-        "height": 0,
-        "options": [
-            {
-                "label": "Minuto",
-                "value": "minute",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Segundos",
-                "value": "second",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Categoria",
-                "value": "category",
-                "type": "text",
-                "required": true,
-                "rows": null
-            }
-        ],
-        "formValue": {
-            "minute": "",
-            "second": "",
-            "category": ""
-        },
-        "payload": "",
-        "submit": "Pesquisar",
-        "cancel": "",
-        "topic": "busca",
-        "topicType": "msg",
-        "splitLayout": "",
-        "x": 650,
-        "y": 720,
-        "wires": [
-            [
-                "99b0ca4deba32ebe"
-            ]
-        ]
-    },
-    {
-        "id": "7a42467403eb30ec",
-        "type": "file in",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "filename": "",
-        "format": "",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 870,
-        "y": 780,
-        "wires": [
-            [
-                "7c7f65b90fd56a57",
-                "5bafa3ad290892f2"
-            ]
-        ]
-    },
-    {
-        "id": "99b0ca4deba32ebe",
-        "type": "function",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "func": "findMinute = msg.payload.minute;\nfindSecond = msg.payload.second;\nfindCat = msg.payload.category;\ndate = new Date();\nvar tempDateString = \"_\" + findMinute //+ \"-\" + date.getMinute() + \"-\" + date.getYear();\nvar tempDireString = \"C:/Users/RCA/Desktop/CSV archives/teste\";\nvar tempAuxString = tempDireString.concat(tempDateString);\nvar finalPath = tempAuxString.concat(\".csv\");\nmsg.filename = finalPath;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 710,
-        "y": 640,
-        "wires": [
-            [
-                "7a42467403eb30ec"
-            ]
-        ]
-    },
-    {
-        "id": "7c7f65b90fd56a57",
-        "type": "function",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "func": "var dados = msg.payload.toString();\nvar corte = dados.split(/\\r\\n/);\nvar msgList = [];\nfor (var i = 0; i < 15; i++){\n    msgList.push({payload:corte[i]});\n   \n}\n return msgList",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1040,
-        "y": 780,
-        "wires": [
-            [
-                "323cf99d95ec1b73",
-                "a70a178af07569e6",
-                "a47f6d5438d26a2b"
-            ]
-        ]
-    },
-    {
-        "id": "323cf99d95ec1b73",
-        "type": "debug",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1250,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "5bafa3ad290892f2",
-        "type": "ui_text",
-        "z": "0cc221fa0f7b8897",
-        "group": "55f19e211c6b9227",
-        "order": 15,
-        "width": "6",
-        "height": "4",
-        "name": "",
-        "label": "of file",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 1050,
-        "y": 840,
-        "wires": []
-    },
-    {
-        "id": "a70a178af07569e6",
-        "type": "ui_text",
-        "z": "0cc221fa0f7b8897",
-        "group": "55f19e211c6b9227",
-        "order": 15,
-        "width": "6",
-        "height": "4",
-        "name": "",
-        "label": "of function",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 1250,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "a47f6d5438d26a2b",
-        "type": "file",
-        "z": "0cc221fa0f7b8897",
-        "name": "",
-        "filename": "C:/Users/RCA/Desktop/CSV archives/teste.csv",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 1360,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6b3fe7229321ee71",
-        "type": "comment",
-        "z": "0cc221fa0f7b8897",
-        "name": "TESTE 2",
-        "info": "",
-        "x": 1020,
-        "y": 700,
-        "wires": []
     },
     {
         "id": "260d8e8693d4327d",
@@ -1575,29 +1360,77 @@
         "z": "0cc221fa0f7b8897",
         "name": "TESTE 1 ",
         "info": "",
-        "x": 600,
+        "x": 800,
         "y": 220,
         "wires": []
     },
     {
-        "id": "bb1a952064836210",
-        "type": "ui_date_picker",
+        "id": "d673ebaa088924a5",
+        "type": "function",
         "z": "0cc221fa0f7b8897",
         "name": "",
-        "label": "date",
-        "group": "55f19e211c6b9227",
-        "order": 18,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 70,
-        "y": 280,
+        "func": "findDate = msg.payload.date;\ninfDate = findDate.split(/-T/)\n//findInitTime = msg.payload.initTime;\n//findFinalTime = msg.payload.finalTime;\nvar tempDateString = \"_\" + findDate + \"-\" + \"09\" + \"-\" + \"2021\";\nvar tempDireString = \"C:/Users/RCA/Desktop/CSV archives/teste\";\nvar tempAuxString = tempDireString.concat(tempDateString);\nvar finalPath = tempAuxString.concat(\".csv\");\nmsg.filename = finalPath;\nmsg.payload = findDate + \"-\" + findInitTime + \"-\" + findFinalTime;\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 360,
         "wires": [
             [
-                "75e2a0125fe85e9a"
+                "8bfcbc943d62c134"
             ]
+        ]
+    },
+    {
+        "id": "d23a1d6e27ea60d9",
+        "type": "debug",
+        "z": "0cc221fa0f7b8897",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d76761845422e723",
+        "type": "ui_text",
+        "z": "0cc221fa0f7b8897",
+        "group": "55f19e211c6b9227",
+        "order": 14,
+        "width": "6",
+        "height": "4",
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 510,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5453676d9058fd17",
+        "type": "function",
+        "z": "0cc221fa0f7b8897",
+        "name": "",
+        "func": "findInitTime = msg.payload.initTime;\nfindFinalTime = msg.payload.finalTime;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 240,
+        "wires": [
+            []
         ]
     }
 ]
